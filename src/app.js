@@ -49,12 +49,12 @@ const searchAmazon = async (page, bookName) => {
     await page.click("#nav-search-submit-button");
     await page.waitForSelector("h2 > a"); // wait for search results to be fully loaded
     await page.click("h2 > a");
-    await page.waitForSelector("#add-to-cart-button");
     let addToCartBtn = (await page.$("#add-to-cart-button")) || ""; // check if add to cart button is present on page (not present for audio books)
     if (addToCartBtn !== "") {
       await page.click("#add-to-cart-button");
     } else {
-      await page.click('[title="Add to List"]');
+      await page.waitForSelector("a.a-button-text.a-text-left");
+      await page.click("a.a-button-text.a-text-left");
     }
   } catch (error) {
     logger.error(`Error finding book on amazon: ${error}`);
