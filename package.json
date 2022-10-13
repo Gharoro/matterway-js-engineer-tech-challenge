@@ -1,0 +1,16 @@
+{
+  "name": "matterway-js-engineer-tech-challenge",
+  "version": "1.0.0",
+  "description": "Customer book buying automation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pureheart Gharoro",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^18.2.1",
+    "winston": "^3.8.2"
+  }
+}
